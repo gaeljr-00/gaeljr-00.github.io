@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis días de amor</title>
+    <link rel="stylesheet" href="Estilo_del_contador.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Mis días de amor </h1>
+        <div id="daysCounter">0</div>
+    </div>
+
+    <script>
+        const startDate = new Date('2024-09-10');
+
+        function updateDaysCounter() {
+            const currentDate = new Date();
+            const timeDifference = currentDate - startDate;
+            const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            document.getElementById('daysCounter').innerText = daysDifference;
+        }
+
+        setInterval(updateDaysCounter, 1000);
+        updateDaysCounter();
+    </script>
+</body>
+</html>
